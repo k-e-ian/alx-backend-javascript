@@ -2,7 +2,9 @@ export default function createReportObject(employeesList) {
   const allEmployees = {};
 
   for (const departmentName in employeesList) {
-    allEmployees[departmentName] = employeesList[departmentName];
+    if (Object.prototype.hasOwnProperty.call(employeesList, departmentName)) {
+      allEmployees[departmentName] = employeesList[departmentName];
+    }
   }
 
   return {
