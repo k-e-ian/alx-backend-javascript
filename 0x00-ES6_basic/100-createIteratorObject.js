@@ -4,12 +4,11 @@ export default function createIteratorObject(report) {
   let currentIndex = 0;
 
   return {
-    next: function () {
+    next() {
       if (currentIndex < employeeList.length) {
         return { value: employeeList[currentIndex++], done: false };
-      } else {
-        return { done: true };
       }
+      return { done: true };
     },
   };
 }
