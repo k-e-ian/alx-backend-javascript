@@ -1,6 +1,6 @@
 export default class Building {
   constructor(sqft) {
-    if (typeof sqft !== 'number') {
+    if (typeof sqft !== 'number' || Number.isNaN(sqft) || sqft <= 0) {
       throw new TypeError('Sqft must be a number');
     }
     this._sqft = sqft;
@@ -13,6 +13,8 @@ export default class Building {
   // Abstract method
 
   evacuationWarningMessage() {
-    throw new Error('Class extending Building must override evacuationWarningMessage');
+    if (this.constructor === Building) {
+      throw new Error('Class extending Building must override evacuationWarningMessage');
+    }
   }
 }
