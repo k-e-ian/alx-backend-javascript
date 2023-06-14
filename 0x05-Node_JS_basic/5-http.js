@@ -3,6 +3,7 @@ const fs = require('fs');
 
 const PORT = 1245;
 const DB_FILE = 'database.csv';
+const NO_DB_FILE_CONTENT = fs.readFileSync('3-read_file_async.js', 'utf-8');
 
 const app = http.createServer((req, res) => {
   if (req.url === '/') {
@@ -43,8 +44,8 @@ const app = http.createServer((req, res) => {
         }
       });
     } else {
-      res.writeHead(404, { 'Content-Type': 'text/plain' });
-      res.end('Database not found\n');
+      res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.end(NO_DB_FILE_CONTENT);
     }
   } else {
     res.writeHead(404, { 'Content-Type': 'text/plain' });
