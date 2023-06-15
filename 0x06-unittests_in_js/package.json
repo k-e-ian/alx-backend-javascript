@@ -1,0 +1,15 @@
+{
+  "name": "0x06-unittests_in_js",
+  "version": "1.0.0",
+  "description": "`By`: `Johann Kerbrat, Engineering Manager at Uber Works`  Weight: 1  Project will start Jun 14, 2023 6:00 AM, must end by Jun 16, 2023 6:00 AM  Checker was released at Jun 14, 2023 6:00 PM  An auto review will be launched at the deadline",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  }
+}
