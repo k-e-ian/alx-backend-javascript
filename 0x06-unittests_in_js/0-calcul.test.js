@@ -1,5 +1,6 @@
 const assert = require('assert');
-const calculateNumber = require('./0-calcul.js');
+const { describe, it } = require("mocha");
+const calculateNumber = require('./0-calcul');
 
 describe('calculateNumber', () => {
   it('should round a and b and return the sum', () => {
@@ -8,6 +9,10 @@ describe('calculateNumber', () => {
 
   it('should round a and b and return the sum', () => {
     assert.strictEqual(calculateNumber(1, 3.7), 5);
+  });
+
+  it('should round -a and -b and return the sum', () => {
+    assert.strictEqual(calculateNumber(-1.4, -1.3), -2);
   });
 
   it('should round a and b and return the sum', () => {
